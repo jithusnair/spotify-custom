@@ -11,7 +11,7 @@
 
 	function login() {
 		let url = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${encodeURI(
-			'http://localhost:3000/listen'
+			process.env.REDIRECT_URI
 		)}&scope=${encodeURIComponent(
 			'user-read-email user-read-private user-library-modify user-library-read playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative app-remote-control user-read-recently-played user-top-read user-read-playback-position  streaming user-read-playback-state user-modify-playback-state user-read-currently-playing'
 		)}&response_type=token`;
