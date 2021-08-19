@@ -18,6 +18,8 @@
 	let backgroundBlur = true;
 
 	let timer = null;
+	
+	
 
 	let randomValue = 0; // to trigger #key and load new image
 	let src = '';
@@ -64,8 +66,12 @@
 		}
 	}
 
+	// to prevent browser from caching the images
+	// the link needs to change every time
+	// hence date.now() query param is added
 	function preload(source) {
-		src = source;
+		src = source+ `?${Date.now()}`;
+		
 		return new Promise(function (resolve) {
 			let img = new Image();
 			img.onload = () => {
