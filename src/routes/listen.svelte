@@ -22,7 +22,6 @@
 	async function addToPlayList(event) {
 		await transferPlayback(token, event.detail);
 		let tracksAfterFirst = tracks.slice(1);
-		console.log(tracksAfterFirst, tracks);
 		await addPlaylistToQueue(token, tracksAfterFirst, event.detail);
 	}
 
