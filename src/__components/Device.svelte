@@ -113,7 +113,7 @@
 	}
 
 	function playPrevious() {
-		player.nextTrack().then(() => {
+		player.previousTrack().then(() => {
 			console.log('Set to previous track!');
 		});
 	}
